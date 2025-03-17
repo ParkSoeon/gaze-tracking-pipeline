@@ -134,7 +134,7 @@ def extract_frames(video_path: str, output_folder: str) -> None:
     subprocess.run(["ffmpeg", "-i", video_path, "-f", "image2", f"{output_folder}/frame_%07d.png"])
     print("✅ 프레임 추출 완료!")
 
-def calibration(image_path, every_nth: int = 1, debug: bool = False, chessboard_grid_size=(10, 7)):
+def calibration(image_path, every_nth: int = 1, debug: bool = False, chessboard_grid_size=(7, 7)):
     """체커보드 패턴을 인식하여 카메라 캘리브레이션 진행"""
     x, y = chessboard_grid_size
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
