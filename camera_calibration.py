@@ -169,7 +169,7 @@ def calibration(image_path, every_nth: int = 1, debug: bool = False, chessboard_
     print(f'📏 RMS Error: {rms}')
 
     data = {'rms': rms, 'camera_matrix': mtx.tolist(), 'dist_coeff': dist.tolist()}
-    with open("calibration_matrix.yaml", "w") as f:
+    with open("calibration_matrix2.yaml", "w") as f:
         yaml.dump(data, f)
     
     print("✅ 캘리브레이션 완료! → calibration_matrix.yaml 저장됨.")
