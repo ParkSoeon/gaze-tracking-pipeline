@@ -168,7 +168,7 @@ def calibration(image_path, every_nth: int = 1, debug: bool = False, chessboard_
     rms, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
     print(f'📏 RMS Error: {rms}')
 
-    data = {'rms': rms.tolist(), 'camera_matrix': mtx.tolist(), 'dist_coeff': dist.tolist()}
+    data = {'rms': rms, 'camera_matrix': mtx.tolist(), 'dist_coeff': dist.tolist()}
     with open("calibration_matrix.yaml", "w") as f:
         yaml.dump(data, f)
     
